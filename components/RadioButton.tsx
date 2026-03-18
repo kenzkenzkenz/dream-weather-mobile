@@ -1,14 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-type Props = {
+type Props<T extends string> = {
     label: string;
-    value: string;
-    selected: string;
-    onSelect: (value: string) => void;
+    value: T;
+    selected: T;
+    onSelect: (value: T) => void;
 };
 
-export default function RadioButton({ label, value, selected, onSelect }: Props) {
+export default function RadioButton<T extends string>({
+    label, value, selected, onSelect
+}: Props<T>) {
+
     const isSelected = selected === value;
 
     return (

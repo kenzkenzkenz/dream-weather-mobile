@@ -1,34 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import RadioButton from './RadioButton';
 import CustomButton from './CustomButton';
+import { Country, Preferences } from '@/types';
 
-export default function PreferenceForm() {
-    const USA = {
-        "iso_code": "US",
-        "name": "United States"
+type Props = {
+    onSubmit: (values: Preferences) => void;
+};
+
+export default function PreferenceForm({ onSubmit }: Props) {
+
+    const USA: Country = {
+        iso_code: "US",
+        name: "United States"
     }
-    const [country, setCountry] = useState(USA)
-    const [precip, setPrecip] = useState('');
-    const [temp, setTemp] = useState('');
 
-
-    const handleSubmit = async () => {
-        const req = {
-            "country": country,
-            "precipitation": precip,
-            "temperature": temp
-        }
-        try {
-
-        } catch (error) {
-
-        }
-    }
+    const [country, setCountry] = useState<Country>(USA)
+    const [precip, setPrecip] = useState<'none' | 'rain' | 'snow'>('none');
+    const [temp, setTemp] = useState<'hot' | 'cold'>('cold');
 
     return (
         <View style={styles.container}>
-
+            <Text>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
             <Text style={styles.label}>Precipitation</Text>
             <View style={{ flexDirection: 'row', marginTop: 20 }}>
                 <RadioButton label="None" value="none" selected={precip} onSelect={setPrecip} />
@@ -44,8 +37,8 @@ export default function PreferenceForm() {
             <View style={{ margin: 20 }}></View>
             <CustomButton
                 title={`Let's Go!`}
-                values={{ country, precip, temp }}
-                onPress={handleSubmit}>
+                values={{ precipitation: precip, temperature: temp, country }}
+                onPress={onSubmit}>
             </CustomButton>
         </View>
     )

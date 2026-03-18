@@ -1,15 +1,11 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-
-type Country = {
-    name: string;
-    iso_code: string;
-}
+import { Preferences } from '@/types';
 
 type Props = {
     title: string;
-    onPress: (values: { country: Country; precip: string; temp: string }) => void;
-    values: { country: Country; precip: string; temp: string };
+    onPress: (values: Preferences) => void;
+    values: Preferences;
 };
 
 export default function CustomButton({ title, onPress, values }: Props) {
