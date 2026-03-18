@@ -1,15 +1,18 @@
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 export default function Title() {
     return (
         <View style={{ alignItems: 'center' }}>
-            <Image 
+            <Image
                 source={require('../assets/images/logo.png')}
                 style={{ width: 100, height: 100, marginBottom: 20 }}
             />
-            <Text
-                style={{ fontSize: 24, fontWeight: '400' }}
-            >Dream Weather Mobile</Text>
+            <View>
+                <Text
+                    style={{ fontSize: 24, fontWeight: 'bold' }}
+                >Dream Weather</Text>
+                <Text style={{ fontStyle: 'italic', fontSize: 16 }}>Mobile</Text>
+            </View>
         </View>
     )
 }
