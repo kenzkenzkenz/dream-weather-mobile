@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import Title from '@/components/Title';
 import PreferenceForm from '@/components/PreferenceForm';
 import ResultScreen from './ResultScreen';
 import { MatchResponse, Country } from '@/types';
+import Footer from '@/components/Footer';
 
 export default function HomeScreen() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'no-data' | 'rate-limit' | 'forbidden'>('idle');
@@ -32,7 +33,7 @@ export default function HomeScreen() {
             const response = await fetch(`${backendUrl}/api/v1/livestream/match`, {
                 method: 'POST',
                 headers: headers,
-                body: JSON.stringify(values)
+                body: JSON.stringify(reqBody)
             });
 
             if (!response.ok) {
@@ -52,7 +53,7 @@ export default function HomeScreen() {
             }
 
             const data = await response.json();
-            console.log("response body: ", data);
+
             if (!data) {
                 setStatus('no-data');
                 return;
@@ -66,12 +67,15 @@ export default function HomeScreen() {
     };
 
     return (
-        <View style={{ alignItems: 'center', justifyContent: 'flex-start', paddingBottom: 20 }}>
-            <Title />
-            <View style={{ margin: 20 }}>
-                {status === 'idle' && <PreferenceForm onSubmit={handleSubmit} />}
-                {status === 'success' && <ResultScreen match={match} />}
+        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }}>
+            <View style={{ flex: 1 }}>
+                <Title />
+                <View style={{ margin: 20 }}>
+                    {status === 'idle' && <PreferenceForm onSubmit={handleSubmit} />}
+                    {status === 'success' && <ResultScreen match={match} />}
+                </View>
+                <Footer />
             </View>
-        </View>
+        </ScrollView>
     )
 }
