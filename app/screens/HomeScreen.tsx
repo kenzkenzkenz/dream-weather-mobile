@@ -1,5 +1,5 @@
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Title from '@/components/Title';
 import PreferenceForm from '@/components/PreferenceForm';
 import ResultScreen from './ResultScreen';
@@ -12,12 +12,34 @@ import ReportButton from '@/components/ReportButton';
 export default function HomeScreen() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'no-data' | 'rate-limit' | 'forbidden'>('idle');
     const [match, setMatch] = useState<MatchResponse | null>(null);
+    const [fact, setFact] = useState<string>('');
 
     const backendUrl = 'https://dream-weather-backend.onrender.com';
+    const aiServer = 'https://fun-fact-server.onrender.com';
 
     const headers = {
         'Content-Type': 'application/json',
     };
+
+    useEffect(() => {
+        const getFact = async () => {
+            try {
+                const response = await fetch(`${aiServer}/fact`, {
+                    method: 'GET',
+                });
+                if (!response.ok) {
+                    console.error('Failed to fetch fact');
+                    return;
+                }
+                const data = await response.json();
+                setFact(data.fact);
+                console.log('Fun Fact:', data.fact);
+            } catch (error) {
+                console.error('Error fetching fact:', error);
+            }
+        };
+        getFact();
+    }, []);
 
     const handleSubmit = async (values: {
         precipitation: string;
@@ -89,7 +111,11 @@ export default function HomeScreen() {
                         </View>
                     )}
 
-                    {status === 'loading' && <Loader />}
+                    {status === 'loading' &&
+                        <View>
+                            <Loader fact={fact} />
+                        </View>
+                    }
 
                     {status === 'error' && (
                         <View style={styles.container}>
