@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="160" alt="Dream Weather logo"/>
+  <img src="/assets/logo.png" width="160" alt="Dream Weather logo"/>
 </p>
 
 <h1 align="center">Dream Weather</h1>
