@@ -21,25 +21,29 @@ export default function HomeScreen() {
         'Content-Type': 'application/json',
     };
 
-    useEffect(() => {
-        const getFact = async () => {
-            try {
-                const response = await fetch(`${aiServer}/fact`, {
-                    method: 'GET',
-                });
-                if (!response.ok) {
-                    console.error('Failed to fetch fact');
-                    return;
-                }
-                const data = await response.json();
-                setFact(data.fact);
-                console.log('Fun Fact:', data.fact);
-            } catch (error) {
-                console.error('Error fetching fact:', error);
+    const getFact = async () => {
+        try {
+            const response = await fetch(`${aiServer}/fact`, {
+                method: 'GET',
+            });
+            if (!response.ok) {
+                console.error('Failed to fetch fact');
+                return;
             }
-        };
-        getFact();
-    }, []);
+            const data = await response.json();
+            setFact(data.fact);
+        } catch (error) {
+            console.error('Error fetching fact:', error);
+        }
+    };
+
+    useEffect(() => {
+        if (status === 'idle') {
+            setMatch(null);
+            setFact('');
+            getFact();
+        }
+    }, [status]);
 
     const handleSubmit = async (values: {
         precipitation: string;
