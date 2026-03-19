@@ -8,6 +8,7 @@ type FooterLink = {
 
 const links: FooterLink[] = [
   { label: 'OpenWebcamDB', url: 'https://openwebcamdb.com' },
+  { label: 'Cohere', url: 'https://cohere.ai' },
   { label: 'NOAA / NWS', url: 'https://www.weather.gov' },
   { label: 'Mackenzie Allen', url: 'https://github.com/kenzkenzkenz' },
   { label: 'View source code on GitHub', url: 'https://github.com/kenzkenzkenz/dream-weather-mobile' },
@@ -28,22 +29,29 @@ export default function Footer() {
       </Text>
 
       <Text style={styles.text}>
-        Weather data provided by{' '}
+        Fun weather facts provided by{' '}
         <Text style={styles.link} onPress={() => openURL(links[1].url)}>
           {links[1].label}
         </Text>.
       </Text>
 
       <Text style={styles.text}>
-        App developed by{' '}
+        Weather data provided by{' '}
         <Text style={styles.link} onPress={() => openURL(links[2].url)}>
           {links[2].label}
         </Text>.
       </Text>
 
       <Text style={styles.text}>
+        App developed by{' '}
         <Text style={styles.link} onPress={() => openURL(links[3].url)}>
           {links[3].label}
+        </Text>.
+      </Text>
+
+      <Text style={styles.text}>
+        <Text style={styles.link} onPress={() => openURL(links[4].url)}>
+          {links[4].label}
         </Text>.
       </Text>
 
