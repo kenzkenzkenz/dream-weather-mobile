@@ -11,6 +11,10 @@ let lastFetchTime = 0;
 
 const CACHE_DURATION = 5 * 60 * 1000;
 
+app.get("/", (req, res) => {
+    res.send("AI server is running");
+});
+
 app.get("/fact", async (req, res) => {
     try {
         if (cachedFact && Date.now() - lastFetchTime < CACHE_DURATION) {
