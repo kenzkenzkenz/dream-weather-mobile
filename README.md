@@ -2,7 +2,7 @@
   <img src="/assets/images/logo.png" width="160" alt="Dream Weather logo"/>
 </p>
 
-<h1 align="center">Dream Weather Mobile</h1>
+<h1 align="center">Dream Weather</h1><italic> Mobile</italic>
 
 <p align="center">
   Weather & Livestream Matching Mobile App
@@ -10,7 +10,7 @@
 
 # Dream Weather Mobile
 
-Dream Weather Mobile is the mobile version of the React + Spring Boot application that matches users with locations based on their ideal weather conditions. The app provides users with a location match complete with title, description, temperature, current weather conditions, and an embedded livestream.
+Dream Weather Mobile is the mobile version of the React + Spring Boot application that matches users with locations based on their ideal weather conditions. The app provides users with a location match complete with title, description, temperature, current weather conditions, and an embedded livestream. It also features an AI-powered weather fact with every request.
 
 ---
 
@@ -19,7 +19,7 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 Explore the app by first installing [Expo Go](https://expo.dev/go) (available for both iOS and Android),
 then scan the QR code:
 <p align="left">
-  <img src="/assets/images/mobileQR.png" width="120" alt="mobile QR code"/>
+  <img src="/assets/images/mobileQR.png" width="150" alt="mobile QR code"/>
 </p>
 
 ---
@@ -101,7 +101,6 @@ then scan the QR code:
 
 
 ## Instructions for Running the UI on Expo##
-# Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
