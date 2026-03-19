@@ -2,7 +2,7 @@ import { View, Text, Image } from 'react-native';
 
 export default function Title() {
     return (
-        <View style={{ alignItems: 'center', flexDirection: 'row', paddingTop: 60, paddingLeft: 20 }}>
+        <View style={{ alignItems: 'center', flexDirection: 'row', paddingTop: 60 }}>
             <Image
                 source={require('../assets/images/logo.png')}
                 style={{ width: 80, height: 80, marginRight: 10 }}

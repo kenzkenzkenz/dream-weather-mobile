@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 type Props<T extends string> = {
     label: string;
     value: T;
-    selected: T;
+    selected: T | null;
     onSelect: (value: T) => void;
 };
 

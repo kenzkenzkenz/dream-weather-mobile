@@ -6,11 +6,12 @@ type Props = {
     title: string;
     onPress: (values: Preferences) => void;
     values: Preferences;
+    disabled?: boolean;
 };
 
-export default function CustomButton({ title, onPress, values }: Props) {
+export default function CustomButton({ title, onPress, values, disabled }: Props) {
     return (
-        <TouchableOpacity style={styles.button} onPress={() => onPress(values)}>
+        <TouchableOpacity style={styles.button} onPress={() => onPress(values)} disabled={disabled}>
             <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>
     );
