@@ -39,39 +39,32 @@ export default function HomeScreen() {
                 body: JSON.stringify(reqBody)
             });
 
-            if (!response.ok) {
-                if (response.status === 404) {
-                    setStatus('no-data');
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        setStatus('no-data');
+                    }
+                    else if (response.status === 403) {
+                        setStatus('forbidden');
+                    }
+                    else if (response.status === 429) {
+                        setStatus('rate-limit');
+                    }
+                    else {
+                        setStatus('error');
+                    }
+                    return;
                 }
-                else if (response.status === 403) {
-                    setStatus('forbidden');
-                }
-                else if (response.status === 429) {
-                    setStatus('rate-limit');
-                }
-                else {
-                    setStatus('error');
-                }
-                return;
-            }
 
             const data = await response.json();
 
-            if (!data) {
-                setStatus('no-data');
-                return;
-            }
-
-            setMatch(data);
-            setStatus('success');
         } catch (error) {
             setStatus('error');
         }
     };
 
     return (
-        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }}>
-            <View style={{ flex: 1, width: '100%' }}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <View style={{ flex: 1, width: '100%', alignItems: 'center' }}>
                 <Title />
                 <View style={{ margin: 10 }}>
                     {status === 'idle' && <PreferenceForm onSubmit={handleSubmit} />}
