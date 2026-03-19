@@ -39,24 +39,31 @@ export default function HomeScreen() {
                 body: JSON.stringify(reqBody)
             });
 
-                if (!response.ok) {
-                    if (response.status === 404) {
-                        setStatus('no-data');
-                    }
-                    else if (response.status === 403) {
-                        setStatus('forbidden');
-                    }
-                    else if (response.status === 429) {
-                        setStatus('rate-limit');
-                    }
-                    else {
-                        setStatus('error');
-                    }
-                    return;
+            if (!response.ok) {
+                if (response.status === 404) {
+                    setStatus('no-data');
                 }
+                else if (response.status === 403) {
+                    setStatus('forbidden');
+                }
+                else if (response.status === 429) {
+                    setStatus('rate-limit');
+                }
+                else {
+                    setStatus('error');
+                }
+                return;
+            }
 
             const data = await response.json();
 
+            if (!data) {
+                setStatus('no-data');
+                return;
+            }
+
+            setMatch(data);
+            setStatus('success');
         } catch (error) {
             setStatus('error');
         }
