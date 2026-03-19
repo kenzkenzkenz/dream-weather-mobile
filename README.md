@@ -1,6 +1,16 @@
-# Dream Weather
+<p align="center">
+  <img src="assets/logo.png" width="160" alt="Dream Weather logo"/>
+</p>
 
-Dream Weather is the mobile version of the React + Spring Boot application that matches users with locations based on their ideal weather conditions. The app provides users with a location match complete with title, description, temperature, current weather conditions, and an embedded livestream.
+<h1 align="center">Dream Weather</h1>
+
+<p align="center">
+  Weather & Livestream Matching Mobile App
+</p>
+
+# Dream Weather Mobile
+
+Dream Weather Mobile is the mobile version of the React + Spring Boot application that matches users with locations based on their ideal weather conditions. The app provides users with a location match complete with title, description, temperature, current weather conditions, and an embedded livestream.
 
 ---
 
