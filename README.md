@@ -2,7 +2,7 @@
   <img src="/assets/images/logo.png" width="160" alt="Dream Weather logo"/>
 </p>
 
-<h1 align="center">Dream Weather</h1>
+<h1 align="center">Dream Weather Mobile</h1>
 
 <p align="center">
   Weather & Livestream Matching Mobile App
@@ -15,9 +15,12 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 ---
 
 ##  Live Demo
-
-Explore the app on Expo Go:
 (available for both iOS and Android)
+Explore the app by first installing [Expo Go](https://expo.dev/go),
+then scan the QR code:
+<p align="left">
+  <img src="/assets/images/mobileQR.png" width="160" alt="mobile QR code"/>
+</p>
 
 ---
 
