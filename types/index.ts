@@ -24,7 +24,7 @@ export type LocationData = {
 export type MatchResponse = {
     success: boolean;
     message: string;
-    data: LocationData;
+    data: LocationData | null;
 };
 
 export type Preferences = {

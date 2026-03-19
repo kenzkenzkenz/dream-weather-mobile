@@ -18,12 +18,12 @@ export default function CustomButton({ title, onPress, values }: Props) {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#b6b6b6',
+        backgroundColor: '#f7fbff',
         borderRadius: 8,
         paddingVertical: 12,
         paddingHorizontal: 20,
-        borderWidth: 0,
-        borderColor: 'black',
+        borderWidth: 1,
+        borderColor: 'lightgray',
         alignItems: 'center',
         marginTop: 20,
     },

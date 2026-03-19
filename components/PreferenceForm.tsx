@@ -21,7 +21,7 @@ export default function PreferenceForm({ onSubmit }: Props) {
 
     return (
         <View style={styles.container}>
-            <Text>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
+            <Text style={{ marginTop: 40 }}>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
             <Text style={styles.label}>Precipitation</Text>
             <View style={{ flexDirection: 'row', marginTop: 20 }}>
                 <RadioButton label="None" value="none" selected={precip} onSelect={setPrecip} />

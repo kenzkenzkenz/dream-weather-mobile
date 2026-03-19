@@ -60,13 +60,15 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     marginBottom: 5,
-    fontSize: 14,
+    fontSize: 12,
   },
   link: {
     color: '#1e90ff',
     textDecorationLine: 'underline',
+    fontSize: 12,
   },
   footer: {
     fontStyle: 'italic',
+    fontSize: 12,
   },
 });

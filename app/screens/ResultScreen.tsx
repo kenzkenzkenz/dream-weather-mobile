@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function ResultScreen({ match }: Props) {
+    if (!match) return null;
     return (
         <View>
             <Text style={{ fontSize: 20, fontWeight: '500', margin: 10 }}>{match?.data?.title}</Text>
@@ -16,15 +17,15 @@ export default function ResultScreen({ match }: Props) {
             <Text style={{ margin: 10 }}>{match?.data?.description}</Text>
 
             <View style={{ width: '100%', height: 165, marginVertical: 10, borderColor: '#ffffff', borderWidth: 1 }}>
-                <WebView
-                    source={{ uri: (match?.data?.stream_url || '') }}
-                    style={{ flex: 1 }}
-                    javaScriptEnabled
-                    domStorageEnabled
-                    allowsFullscreenVideo
-                    allowsInlineMediaPlayback
-                    mediaPlaybackRequiresUserAction={false}
-                />
+                    <WebView
+                        source={{ uri: (match?.data?.stream_url || '') }}
+                        style={{ flex: 1 }}
+                        javaScriptEnabled
+                        domStorageEnabled
+                        allowsFullscreenVideo
+                        allowsInlineMediaPlayback
+                        mediaPlaybackRequiresUserAction={false}
+                    />
             </View>
         </View>
     )
