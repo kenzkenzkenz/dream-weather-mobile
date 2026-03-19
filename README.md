@@ -15,11 +15,11 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 ---
 
 ##  Live Demo
-(available for both iOS and Android)
-Explore the app by first installing [Expo Go](https://expo.dev/go),
+
+Explore the app by first installing [Expo Go](https://expo.dev/go) (available for both iOS and Android),
 then scan the QR code:
 <p align="left">
-  <img src="/assets/images/mobileQR.png" width="160" alt="mobile QR code"/>
+  <img src="/assets/images/mobileQR.png" width="120" alt="mobile QR code"/>
 </p>
 
 ---
@@ -60,9 +60,34 @@ then scan the QR code:
    - User submits their weather preferences via a simple form.  
    - Calls the backend and shows a loading state with animated messages.  
    - Displays the matched location with details and embedded livestream.  
-   - Provides “Try Again” buttons for errors, no matches, or fetching a new location.  
+   - Provides “Try Again” buttons for errors, no matches, or fetching a new location.
+  
+3. **AI Server**
+   - Lightweight Node.js server that fetches fun weather facts from Cohere AI.
+   - Provides a random weather fact via the /fact endpoint.
+   - Uses Express.js for routing and handling requests.
+   - Falls back to a default fact if the API request fails.
 
 ---
+
+##  Lessons Learned
+
+* Always **check API capabilities and limitations** before coding — never make assumptions.
+* Plan **UI/UX design** before building to reduce rewrites.
+* Learned **server-side caching** concepts, even though it wasn’t implemented in the final version.
+* Handling **unavailable livestreams, YouTube restrictions, and no-match scenarios** gracefully is crucial for a smooth UX.
+* Some APIs (like OpenWebcamDB) require **API keys** and often have **rate limits** (e.g., 50 calls per day).
+* Many AI services are not free.
+
+---
+
+## Credits
+
+* Webcam data provided by [OpenWebcamDB](https://openwebcamdb.com)
+* Weather data provided by [NOAA / NWS](https://weather.gov)
+* Fun weather facts provided by [Cohere](https://cohere.com/)
+
+------
 
 ##  Setup Instructions
 
@@ -74,43 +99,8 @@ then scan the QR code:
    `mvn spring-boot:run`
 4. The backend runs on `http://localhost:8080` by default.
 
-### Frontend
 
-1. Navigate to `/frontend`.
-2. Install dependencies:
-   `npm install`
-3. Start the development server:
-   `npm run dev`
-4. React will open `http://localhost:{port}` in your browser.
-
->  Notes from setup:
->
-> * Initially tried `create-react-app`, but Vite was needed for Node v20+.
-> * Used `npm create vite@latest` with React (JavaScript + SWC variant).
-> * Updated Node.js to v20.19.6 and npm to v10.8.2 to satisfy Vite requirements.
-
----
-
-##  Lessons Learned
-
-* Always **check API capabilities and limitations** before coding — never make assumptions.
-* Plan **UI/UX design** before building to reduce rewrites.
-* Learned **server-side caching** concepts, even though it wasn’t implemented in the final version.
-* Handling **unavailable livestreams, YouTube restrictions, and no-match scenarios** gracefully is crucial for a smooth UX.
-* Some APIs (like OpenWebcamDB) require **API keys** and often have **rate limits** (e.g., 50 calls per day).
-
----
-
-## Credits
-
-* Webcam data provided by [OpenWebcamDB](https://openwebcamdb.com)
-* Weather data provided by [NOAA / NWS](https://weather.gov)
-* Fun weather facts provided by [Cohere](https://cohere.com/)
-
-------
-------
-
-## Instructions for Expo##
+## Instructions for Running the UI on Expo##
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
