@@ -77,7 +77,7 @@ then scan the QR code:
 * Learned **server-side caching** concepts, even though it wasn’t implemented in the final version.
 * Handling **unavailable livestreams, YouTube restrictions, and no-match scenarios** gracefully is crucial for a smooth UX.
 * Some APIs (like OpenWebcamDB) require **API keys** and often have **rate limits** (e.g., 50 calls per day).
-* Many AI services are not free.
+* Many AI services are **not free**.
 
 ---
 
