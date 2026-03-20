@@ -2,7 +2,7 @@
   <img src="/assets/images/logo.png" width="160" alt="Dream Weather logo"/>
 </p>
 
-<h1 align="center">Dream Weather_ Mobile_</h1>
+<h1 align="center">Dream Weather <i>Mobile</i></h1>
 
 <p align="center">
   Weather & Livestream Matching Mobile App
