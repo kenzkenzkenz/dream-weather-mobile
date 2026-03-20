@@ -2,7 +2,7 @@
   <img src="/assets/images/logo.png" width="160" alt="Dream Weather logo"/>
 </p>
 
-<h1 align="center">Dream Weather</h1><italic> Mobile</italic>
+<h1 align="center">Dream Weather_ Mobile_</h1>
 
 <p align="center">
   Weather & Livestream Matching Mobile App
@@ -100,7 +100,7 @@ then scan the QR code:
 4. The backend runs on `http://localhost:8080` by default.
 
 
-## Instructions for Running the UI on Expo##
+## Instructions for Running the UI on Expo
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
