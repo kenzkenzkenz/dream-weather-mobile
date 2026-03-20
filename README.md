@@ -84,14 +84,14 @@ then scan the QR code:
 ##  Known Issues
 
 1. **"Livestream not available"** 
-  - Some location livestreams no longer broadcast, resulting in empty video players.
-  - A manual skip list was previously used but is no longer scalable.
-  - Planned: Add a scheduled job to check stream metadata and exclude non-playable streams.
+    - Some location livestreams no longer broadcast, resulting in empty video players.
+    - A manual skip list was previously used but is no longer scalable.
+    - Planned: Add a scheduled job to check stream metadata and exclude non-playable streams.
 
 2. **Report Button Not Functioning**
-  - The Report button allowed users to flag problematic streams via email.
-  - This no longer works due to the expired email service.
-  - Next steps: Integrate a new email provider or switch to a logging-based system.
+    - The Report button allowed users to flag problematic streams via email.
+    - This no longer works due to the expired email service.
+    - Next steps: Integrate a new email provider or switch to a logging-based system.
 
 ---
 
