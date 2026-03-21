@@ -1,10 +1,8 @@
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import Title from '@/components/Title';
 import PreferenceForm from '@/components/PreferenceForm';
 import ResultScreen from './ResultScreen';
 import { MatchResponse, Country } from '@/types';
-import Footer from '@/components/Footer';
 import TryAgainButton from '@/components/TryAgainButton';
 import Loader from '@/components/Loader';
 import ReportButton from '@/components/ReportButton';
@@ -93,12 +91,11 @@ export default function HomeScreen() {
         } catch (error) {
             setStatus('error');
         }
-    };
+       };
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={{ flex: 1, width: '100%', alignItems: 'center' }}>
-                <Title />
                 <View style={{ margin: 10 }}>
                     {status === 'idle' && <PreferenceForm onSubmit={handleSubmit} />}
 
@@ -158,7 +155,6 @@ export default function HomeScreen() {
                     )}
 
                 </View>
-                <Footer />
             </View>
         </ScrollView>
     )
