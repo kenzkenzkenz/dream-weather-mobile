@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import RadioButton from './RadioButton';
-import CustomButton from './CustomButton';
+import SubmitButton from './SubmitButton';
 import { Country, Preferences } from '@/types';
 
 type Props = {
@@ -49,12 +49,12 @@ export default function PreferenceForm({ onSubmit }: Props) {
                 <RadioButton label="Warm/Hot" value="hot" selected={temp} onSelect={setTemp} />
             </View>
             <View style={{ margin: 20 }}></View>
-            <CustomButton
+            <SubmitButton
                 title={`Let's Go!`}
                 values={{ precipitation: precip!, temperature: temp!, country }}
                 onPress={onSubmit}
                 disabled={!precip || !temp}>
-            </CustomButton>
+            </SubmitButton>
         </View>
     )
 }
