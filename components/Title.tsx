@@ -11,7 +11,7 @@ export default function Title() {
         <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 50, marginBottom: 10, marginRight: 20, marginLeft: 20 }}>
             <Image
                 source={require('../assets/images/logo.png')}
-                style={{ width: 50, height: 50, marginRight: 20 }}
+                style={{ width: 70, height: 70, marginRight: 20 }}
             />
             <View>
                 <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Dream Weather</Text>
@@ -22,7 +22,7 @@ export default function Title() {
                     name="information-circle-outline"
                     size={28}
                     color="black"
-                    style={{ marginLeft: 60 }}
+                    style={{ marginLeft: 50 }}
                     onPress={() => setModalVisible(true)} />
 
                 <CreditsModal
