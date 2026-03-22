@@ -32,3 +32,18 @@ export type Preferences = {
     temperature: 'hot' | 'cold';
     country: Country;
 };
+
+export type PrecipIcon = 'sunny-outline' | 'rainy-outline' | 'snow-outline';
+
+export type PrecipOption = {
+    key: 'none' | 'rain' | 'snow';
+    label: string;
+    icon: PrecipIcon;
+};
+
+const tempOptionMap = {
+    hot: { label: 'Warm/Hot', icon: 'flame-outline' },
+    cold: { label: 'Cool/Cold', icon: 'snow-outline' },
+} as const;
+
+export type TempOption = (typeof tempOptionMap)[keyof typeof tempOptionMap] & { key: keyof typeof tempOptionMap };

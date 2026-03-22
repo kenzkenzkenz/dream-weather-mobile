@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import RadioButton from './RadioButton';
 import SubmitButton from './SubmitButton';
 import { Country, Preferences } from '@/types';
+import PrecipIconGroup from './PrecipIconGroup';
+import TemperatureToggle from './TemperatureToggle';
+import { PrecipOption, TempOption } from '@/types';
 
 type Props = {
     onSubmit: (values: Preferences) => void;
@@ -18,6 +20,17 @@ export default function PreferenceForm({ onSubmit }: Props) {
     const [country, setCountry] = useState<Country>(USA)
     const [precip, setPrecip] = useState<'none' | 'rain' | 'snow' | null>(null);
     const [temp, setTemp] = useState<'hot' | 'cold' | null>(null);
+
+    const precipOptions: PrecipOption[] = [
+        { key: 'none', label: 'None', icon: 'sunny-outline' },
+        { key: 'rain', label: 'Rain', icon: 'rainy-outline' },
+        { key: 'snow', label: 'Snow', icon: 'snow-outline' },
+    ];
+
+    const tempOptions: TempOption[] = [
+        { key: 'cold', label: 'Cool/Cold', icon: 'snow-outline' },
+        { key: 'hot', label: 'Warm/Hot', icon: 'flame-outline' },
+    ];
 
     useEffect(() => {
         if (!precip || !temp) {
@@ -35,19 +48,22 @@ export default function PreferenceForm({ onSubmit }: Props) {
 
     return (
         <View style={styles.container}>
-            <Text>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
+            <Text style={{ fontSize: 16 }}>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
+
             <Text style={styles.label}>Precipitation</Text>
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <RadioButton label="None" value="none" selected={precip} onSelect={setPrecip} />
-                <RadioButton label="Rain" value="rain" selected={precip} onSelect={setPrecip} />
-                <RadioButton label="Snow" value="snow" selected={precip} onSelect={setPrecip} />
-            </View>
+            <PrecipIconGroup
+                options={precipOptions}
+                value={precip!}
+                onChange={(val) => setPrecip(val)}
+            />
 
             <Text style={styles.label}>Temperature</Text>
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <RadioButton label="Cool/Cold" value="cold" selected={temp} onSelect={setTemp} />
-                <RadioButton label="Warm/Hot" value="hot" selected={temp} onSelect={setTemp} />
-            </View>
+            <TemperatureToggle
+                options={tempOptions}
+                value={temp}
+                onChange={(val) => setTemp(val)}
+            />
+
             <View style={{ margin: 20 }}></View>
             <SubmitButton
                 title={`Let's Go!`}
@@ -65,8 +81,8 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     label: {
-        marginTop: 30,
-        fontSize: 16,
+        marginTop: 40,
+        fontSize: 18,
         color: 'black',
         fontWeight: 'bold'
     }
