@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { PrecipIcon, PrecipOption } from "@/types";
+import { PrecipOption } from "@/types";
 
 type Props = {
   options: PrecipOption[];
@@ -26,7 +26,7 @@ export default function PrecipIconGroup({
               flex: 1,
               padding: 16,
               borderRadius: 16,
-              backgroundColor: isActive ? "#4690ff" : "#f3f4f6",
+              backgroundColor: isActive ? "#4690ff" :"#f7fbff",
               alignItems: "center",
               gap: 8,
             }}

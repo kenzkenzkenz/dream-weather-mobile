@@ -8,9 +8,11 @@ import { PrecipOption, TempOption } from '@/types';
 
 type Props = {
     onSubmit: (values: Preferences) => void;
+    precip: 'none' | 'rain' | 'snow' | null;
+    setPrecip: (precip: 'none' | 'rain' | 'snow' | null) => void;
 };
 
-export default function PreferenceForm({ onSubmit }: Props) {
+export default function PreferenceForm({ onSubmit, precip, setPrecip }: Props) {
 
     const USA: Country = {
         iso_code: "US",
@@ -18,7 +20,6 @@ export default function PreferenceForm({ onSubmit }: Props) {
     }
 
     const [country, setCountry] = useState<Country>(USA)
-    const [precip, setPrecip] = useState<'none' | 'rain' | 'snow' | null>(null);
     const [temp, setTemp] = useState<'hot' | 'cold' | null>(null);
 
     const precipOptions: PrecipOption[] = [
@@ -38,8 +39,7 @@ export default function PreferenceForm({ onSubmit }: Props) {
         }
 
         if (precip === 'snow' && temp === 'hot') {
-            setPrecip(null);
-            setTemp(null);
+            setTemp('cold');
             alert("The weather doesn't work like that! Try something else.");
             return;
         }
@@ -48,8 +48,7 @@ export default function PreferenceForm({ onSubmit }: Props) {
 
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 16 }}>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
-
+            <Text style={styles.description}>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
             <Text style={styles.label}>Precipitation</Text>
             <PrecipIconGroup
                 options={precipOptions}
@@ -80,10 +79,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 20,
     },
+    description: {
+        fontSize: 18,
+        fontWeight: '500',
+        backgroundColor: 'rgba(255, 255, 255, 0.14)',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 20,
+    },
     label: {
         marginTop: 40,
         fontSize: 18,
         color: 'black',
-        fontWeight: 'bold'
-    }
+        fontWeight: 'bold',
+        backgroundColor: 'rgba(255, 255, 255, 0.14)',
+        borderRadius: 20,
+        overflow: 'hidden',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+    },
 })

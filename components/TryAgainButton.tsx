@@ -23,13 +23,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'lightgray',
         alignItems: 'center',
-        marginTop: 10,
         width: 150,
+        height: 50,
         alignSelf: 'center',
+        marginBottom: 20,
     },
     text: {
         color: 'black',
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: '500'
     },
 });

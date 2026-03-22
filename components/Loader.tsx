@@ -24,5 +24,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.40)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 20,
   },
 });

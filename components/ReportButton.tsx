@@ -16,21 +16,19 @@ export default function ReportButton({ title, onPress }: Props) {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#f7fbff',
         borderRadius: 8,
-        paddingVertical: 12,
-        paddingHorizontal: 20,
+        paddingVertical: 10,
         borderWidth: 1,
         borderColor: 'lightgray',
         alignItems: 'center',
         marginTop: 10,
-        width: 100,
-        alignSelf: 'center',
+        width: 160,
         marginLeft: 10,
     },
     text: {
         color: 'black',
-        fontSize: 15,
+        fontSize: 11,
         fontWeight: '400'
     },
 });
