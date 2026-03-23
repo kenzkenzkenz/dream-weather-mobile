@@ -18,7 +18,7 @@ export default function ResultScreen({ match }: Props) {
                 <Text style={styles.description}>{match?.data?.description}</Text>
             </View>
 
-            <View style={{ width: '100%', height: 165, marginVertical: 20, borderColor: '#ffffff', borderWidth: 1 }}>
+            <View style={{ width: '100%', height: 185, marginVertical: 20, borderColor: '#ffffff', borderWidth: 1 }}>
                 <WebView
                     source={{ uri: (match?.data?.stream_url || '') }}
                     style={{ flex: 1 }}

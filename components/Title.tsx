@@ -8,7 +8,14 @@ export default function Title() {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
-        <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 50, marginBottom: 10, marginRight: 20, marginLeft: 20 }}>
+        <View style={{
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            marginBottom: 10,
+            marginRight: 20,
+            marginLeft: 20
+        }}>
             <Image
                 source={require('../assets/images/logo.png')}
                 style={{ width: 70, height: 70, marginRight: 20 }}

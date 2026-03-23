@@ -36,7 +36,7 @@ export default function TemperatureToggle({ options, value, onChange }: Props) {
                         }}
                         style={{
                             flex: 1,
-                            paddingVertical: 12,
+                            paddingVertical: 8,
                             borderRadius: 999,
                             backgroundColor: isActive ? 'rgba(255,255,255,0.3)' : 'transparent',
                             alignItems: 'center',

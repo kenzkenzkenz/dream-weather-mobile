@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 20,
         borderWidth: 1,
-        borderColor: 'lightgray',
+        borderColor: 'gray',
         alignItems: 'center',
         marginTop: 20,
     },
