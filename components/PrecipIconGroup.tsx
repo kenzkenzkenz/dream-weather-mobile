@@ -53,7 +53,7 @@ export default function PrecipIconGroup({
             <LinearGradient
               colors={
                 opt.key === 'none' ? ['#ffffff', '#9dc9ff'] // sunny
-                  : opt.key === 'rain' ? ['#9ab2cf', '#dde3f0'] // rain
+                  : opt.key === 'rain' ? ['#abbdd3', '#dde3f0'] // rain
                     : ['#dbcdfa', '#cee1fa'] // snow
               }
               style={{
