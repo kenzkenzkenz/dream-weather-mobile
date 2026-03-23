@@ -137,8 +137,8 @@ export default function HomeScreen() {
 
                         {status === 'error' && (
                             <View style={styles.container}>
-                                <View style={styles.message}>
-                                    <Text>{"There was an error. Please try again."}</Text>
+                                <View style={styles.errorBox}>
+                                    <Text style={styles.errorText}>{"There was an error. Please try again."}</Text>
                                 </View>
                                 <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
                             </View>
@@ -146,8 +146,8 @@ export default function HomeScreen() {
 
                         {status === 'no-data' && (
                             <View style={styles.container}>
-                                <View style={styles.message}>
-                                    <Text>{"No matching locations found. Try again later."}</Text>
+                                <View style={styles.errorBox}>
+                                    <Text style={styles.errorText}>{"No matching locations found. Try again later."}</Text>
                                 </View>
                                 <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
                             </View>
@@ -155,8 +155,8 @@ export default function HomeScreen() {
 
                         {status === 'rate-limit' && (
                             <View style={styles.container}>
-                                <View style={styles.message}>
-                                    <Text>{"Too many requests! Maybe take a break and go outside."}</Text>
+                                <View style={styles.errorBox}>
+                                    <Text style={styles.errorText}>{"Too many requests! Maybe take a break and go outside."}</Text>
                                 </View>
                                 <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
                             </View>
@@ -164,8 +164,8 @@ export default function HomeScreen() {
 
                         {status === 'forbidden' && (
                             <View style={styles.container}>
-                                <View style={styles.message}>
-                                    <Text>{"A third-party server is currently down. We're working to resolve the issue."}</Text>
+                                <View style={styles.errorBox}>
+                                    <Text style={styles.errorText}>{"A third-party server is currently down. We're working to resolve the issue."}</Text>
                                 </View>
                                 <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
                             </View>
@@ -181,8 +181,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
         height: 350,
-        borderColor: '#ffffff',
-        borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 20
@@ -192,16 +190,17 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    message: {
-        marginBottom: 60,
-        alignItems: 'center',
-    },
-    unavailableMessage: {
+    errorBox: {
         fontStyle: 'italic',
-        backgroundColor: 'rgba(255, 255, 255, 0.40)',
+        backgroundColor: 'rgba(255, 255, 255, 0.20)',
         paddingHorizontal: 10,
         paddingVertical: 15,
         borderRadius: 20,
         marginTop: 10,
+        marginBottom: 30,
     },
+    errorText: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    }
 });
