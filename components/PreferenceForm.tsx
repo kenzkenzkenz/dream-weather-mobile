@@ -49,34 +49,37 @@ export default function PreferenceForm({ onSubmit, precip, setPrecip }: Props) {
     return (
         <View style={styles.container}>
             <Text style={styles.description}>Tell us what vibe you want, and we'll send you to the perfect U.S. location.</Text>
-            <Text style={styles.label}>Precipitation</Text>
+            <View style={{ alignItems: 'center' }}><Text style={styles.label}>Precipitation</Text></View>
             <PrecipIconGroup
                 options={precipOptions}
                 value={precip!}
                 onChange={(val) => setPrecip(val)}
             />
 
-            <Text style={styles.label}>Temperature</Text>
+            <View style={{ alignItems: 'center' }}><Text style={styles.label}>Temperature</Text></View>
             <TemperatureToggle
                 options={tempOptions}
                 value={temp}
                 onChange={(val) => setTemp(val)}
             />
 
-            <View style={{ margin: 20 }}></View>
-            <SubmitButton
-                title={`Let's Go!`}
-                values={{ precipitation: precip!, temperature: temp!, country }}
-                onPress={onSubmit}
-                disabled={!precip || !temp}>
-            </SubmitButton>
+            <View style={{ alignItems: 'center', marginTop: 20 }}>
+                <View style={{ width: '50%', maxWidth: 260 }}>
+                    <SubmitButton
+                        title={`Let's Go!`}
+                        values={{ precipitation: precip!, temperature: temp!, country }}
+                        onPress={onSubmit}
+                        disabled={!precip || !temp}
+                    />
+                </View>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        alignItems: 'stretch',
         margin: 20,
     },
     description: {

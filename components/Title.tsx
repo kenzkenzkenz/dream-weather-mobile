@@ -11,10 +11,9 @@ export default function Title() {
         <View style={{
             alignItems: 'center',
             flexDirection: 'row',
-            justifyContent: 'flex-start',
+            justifyContent: 'space-between',
             marginBottom: 10,
-            marginRight: 20,
-            marginLeft: 20
+            marginHorizontal: 20,
         }}>
             <Image
                 source={require('../assets/images/logo.png')}
@@ -29,13 +28,13 @@ export default function Title() {
                     name="information-circle-outline"
                     size={28}
                     color="black"
-                    style={{ marginLeft: 50 }}
-                    onPress={() => setModalVisible(true)} />
+                    onPress={() => setModalVisible(true)} 
+                />
 
                 <CreditsModal
                     visible={modalVisible}
-                    onClose={() => setModalVisible(false)} />
-
+                    onClose={() => setModalVisible(false)}
+                />
             </View>
 
         </View>

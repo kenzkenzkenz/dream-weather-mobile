@@ -22,6 +22,9 @@ export default function TemperatureToggle({ options, value, onChange }: Props) {
                 borderRadius: 999,
                 padding: 4,
                 marginTop: 12,
+                marginHorizontal: 16,
+                paddingVertical: 12,
+                alignSelf: 'stretch',
             }}
         >
             {options.map((opt) => {

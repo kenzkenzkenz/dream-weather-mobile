@@ -108,74 +108,104 @@ export default function HomeScreen() {
                 style={styles.background}
                 blurRadius={5}
             >
-                <View style={{ flex: 1, width: '100%', alignItems: 'center' }}>
-                    <View>
-                        {status === 'idle' &&
-                            <PreferenceForm onSubmit={handleSubmit} precip={precip} setPrecip={setPrecip} />}
+                <View style={{ width: '100%' }}>
 
-                        {status === 'success' && (
-                            <>
+                    {status === 'idle' && (
+                        <PreferenceForm
+                            onSubmit={handleSubmit}
+                            precip={precip}
+                            setPrecip={setPrecip}
+                        />
+                    )}
+
+                    {status === 'success' && (
+                        <View>
+                            <View>
                                 <ResultScreen match={match} />
+                            </View>
+
+                            <View style={{ alignItems: 'center', marginBottom: 20 }}>
                                 <TryAgainButton
                                     title="Go Again!"
                                     onPress={() => setStatus('idle')}
                                 />
-                                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+
+                                <View style={{ flexDirection: 'row', marginTop: 10 }}>
                                     <ReportButton
                                         title="Report Broken Livestream"
                                         onPress={() => alert('This feature is under construction.')}
                                     />
                                 </View>
-                            </>
-                        )}
-
-                        {status === 'loading' &&
-                            <View>
-                                <Loader fact={fact} />
                             </View>
-                        }
+                        </View>
+                    )}
 
-                        {status === 'error' && (
-                            <View style={styles.container}>
-                                <View style={styles.errorBox}>
-                                    <Text style={styles.errorText}>{"There was an error. Please try again."}</Text>
-                                </View>
-                                <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
+                    {status === 'loading' && (
+                        <View style={{ flex: 1, justifyContent: 'center' }}>
+                            <Loader fact={fact} />
+                        </View>
+                    )}
+
+                    {status === 'error' && (
+                        <View style={styles.container}>
+                            <View style={styles.errorBox}>
+                                <Text style={styles.errorText}>
+                                    {"There was an error. Please try again."}
+                                </Text>
                             </View>
-                        )}
+                            <TryAgainButton
+                                title="Go Again!"
+                                onPress={() => setStatus('idle')}
+                            />
+                        </View>
+                    )}
 
-                        {status === 'no-data' && (
-                            <View style={styles.container}>
-                                <View style={styles.errorBox}>
-                                    <Text style={styles.errorText}>{"No matching locations found. Try again later."}</Text>
-                                </View>
-                                <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
+                    {status === 'no-data' && (
+                        <View style={styles.container}>
+                            <View style={styles.errorBox}>
+                                <Text style={styles.errorText}>
+                                    {"No matching locations found. Try again later."}
+                                </Text>
                             </View>
-                        )}
+                            <TryAgainButton
+                                title="Go Again!"
+                                onPress={() => setStatus('idle')}
+                            />
+                        </View>
+                    )}
 
-                        {status === 'rate-limit' && (
-                            <View style={styles.container}>
-                                <View style={styles.errorBox}>
-                                    <Text style={styles.errorText}>{"Too many requests! Maybe take a break and go outside."}</Text>
-                                </View>
-                                <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
+                    {status === 'rate-limit' && (
+                        <View style={styles.container}>
+                            <View style={styles.errorBox}>
+                                <Text style={styles.errorText}>
+                                    {"Too many requests! Maybe take a break and go outside."}
+                                </Text>
                             </View>
-                        )}
+                            <TryAgainButton
+                                title="Go Again!"
+                                onPress={() => setStatus('idle')}
+                            />
+                        </View>
+                    )}
 
-                        {status === 'forbidden' && (
-                            <View style={styles.container}>
-                                <View style={styles.errorBox}>
-                                    <Text style={styles.errorText}>{"A third-party server is currently down. We're working to resolve the issue."}</Text>
-                                </View>
-                                <TryAgainButton title="Go Again!" onPress={() => setStatus('idle')} />
+                    {status === 'forbidden' && (
+                        <View style={styles.container}>
+                            <View style={styles.errorBox}>
+                                <Text style={styles.errorText}>
+                                    {"A third-party server is currently down. We're working to resolve the issue."}
+                                </Text>
                             </View>
-                        )}
+                            <TryAgainButton
+                                title="Go Again!"
+                                onPress={() => setStatus('idle')}
+                            />
+                        </View>
+                    )}
 
-                    </View>
                 </View>
             </ImageBackground>
         </ScrollView>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
