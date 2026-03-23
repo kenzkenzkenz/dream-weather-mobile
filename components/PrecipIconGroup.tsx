@@ -1,6 +1,10 @@
 import { View, Text, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import * as Haptics from "expo-haptics";
+import { LinearGradient } from "expo-linear-gradient";
 import { PrecipOption } from "@/types";
+import PartlyCloudyIcon from "./PartlyCloudyIcon";
+import RainIcon from "./RainIcon";
+import SnowIcon from "./SnowIcon";
 
 type Props = {
   options: PrecipOption[];
@@ -21,29 +25,56 @@ export default function PrecipIconGroup({
         return (
           <Pressable
             key={opt.key}
-            onPress={() => onChange(opt.key)}
+            onPress={() => {
+              onChange(opt.key);
+              Haptics.selectionAsync();
+            }}
             style={{
               flex: 1,
-              padding: 16,
               borderRadius: 16,
-              backgroundColor: isActive ? "#4690ff" :"#f7fbff",
-              alignItems: "center",
-              gap: 8,
+              shadowOpacity: isActive ? 0.6 : 0,
+              shadowRadius: isActive ? 10 : 0,
+              elevation: isActive ? 8 : 0,
             }}
           >
-            <Ionicons
-              name={opt.icon}
-              size={38}
-              color={isActive ? "white" : "#4b5563"}
-            />
-            <Text
+            {/* selection glow */}
+            <LinearGradient
+              colors={isActive ? ['#fcdadab2', '#ffe89ea4', '#ffffffab', '#b4e8fdad', '#ffffffb2'] : ['transparent', 'transparent']}
               style={{
-                color: isActive ? "white" : "#374151",
-                fontWeight: "600",
+                position: 'absolute',
+                top: -5,
+                bottom: -5,
+                left: -5,
+                right: -5,
+                borderRadius: 22,
+                zIndex: 0,
+              }}
+            />
+            <LinearGradient
+              colors={
+                opt.key === 'none' ? ['#ffffff', '#9dc9ff'] // sunny
+                  : opt.key === 'rain' ? ['#9ab2cf', '#dde3f0'] // rain
+                    : ['#dbcdfa', '#cee1fa'] // snow
+              }
+              style={{
+                padding: 16,
+                borderRadius: 16,
+                alignItems: 'center',
+                gap: 8,
               }}
             >
-              {opt.label}
-            </Text>
+              {opt.key === 'none' && <PartlyCloudyIcon />}
+              {opt.key === 'rain' && <RainIcon />}
+              {opt.key === 'snow' && <SnowIcon />}
+              <Text
+                style={{
+                  color: "#374151",
+                  fontWeight: "600",
+                }}
+              >
+                {opt.label}
+              </Text>
+            </LinearGradient>
           </Pressable>
         );
       })}
