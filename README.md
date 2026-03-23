@@ -58,6 +58,12 @@ then scan the QR code.
 
 ---
 
+## UI Screen Capture
+
+[![Watch Demo](assets/images/screenshots/ScreenRecording_03-23-2026 15-39-18_1.mov)](https://github.com/kenzkenzkenz/dream-weather-mobile/assets/images/screencaps/ScreenRecording_03-23-2026 15-39-18_1.mov)
+
+---
+
 ##  How It Works
 
 1. **Backend Flow**  
