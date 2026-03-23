@@ -1,20 +1,25 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
 import HomeScreen from '../screens/HomeScreen';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
 
 export default function App() {
   return (
-    <>
-      <StatusBar style="dark" backgroundColor="#f7fbff" translucent={false} />
-      <SafeAreaView style={styles.container}>
-        <Title />
-        <HomeScreen />
-        <Footer />
-      </SafeAreaView>
-    </>
+    <SafeAreaView
+      style={[
+        styles.container,
+      ]}
+    >
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#f7fbff"
+        translucent={false}
+      />
+      <Title />
+      <HomeScreen />
+      <Footer />
+    </SafeAreaView>
   );
 }
 
