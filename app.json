@@ -15,6 +15,7 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
+    "platforms": ["ios", "android"],
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
