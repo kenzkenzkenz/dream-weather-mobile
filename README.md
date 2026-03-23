@@ -19,12 +19,17 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 Explore the app by first installing [Expo Go](https://expo.dev/go) (available for both iOS and Android),
 then scan the QR code.
 
-## Current Release - Version 02
+## Current Release - Version 03 (Responsive Layout and Embedded YouTube Frame)
 <p align="left">
-  <img src="/assets/images/mobileQR02.png" width="200" alt="mobile QR 02 code"/>
+  <img src="/assets/images/mobileQR03.png" width="200" alt="mobile QR 03 code"/>
 </p>
 
-## Previous Version - Version 01 (Basic UI)
+## Previous Version - Version 02 (Background Images & Improved Selectors)
+<p align="left">
+  <img src="/assets/images/mobileQR02.png" width="120" alt="mobile QR 02 code"/>
+</p>
+
+## Version 01 (Basic UI)
 <p align="left">
   <img src="/assets/images/mobileQR01.png" width="120" alt="mobile QR 01 code"/>
 </p>
