@@ -16,7 +16,7 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 
 ## UI Screen Capture
 
-https://github.com/user-attachments/assets/327f1584-393e-4e22-bb35-af731ad24403
+https://github.com/user-attachments/assets/cdde560c-401e-4a6c-bf15-41a442a875c7
 
 ---
 
