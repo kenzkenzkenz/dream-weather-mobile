@@ -14,22 +14,28 @@ Dream Weather Mobile is the mobile version of the React + Spring Boot applicatio
 
 ---
 
+## UI Screen Capture
+
+https://github.com/user-attachments/assets/327f1584-393e-4e22-bb35-af731ad24403
+
+---
+
 ##  Live Demo
 
 Explore the app by first installing [Expo Go](https://expo.dev/go) (available for both iOS and Android),
 then scan the QR code.
 
-## Current Release - Version 03 (Responsive Layout and Embedded YouTube Frame)
+### Current Release - Version 03 (Responsive Layout and Embedded YouTube Frame)
 <p align="left">
   <img src="/assets/images/mobileQR03.png" width="200" alt="mobile QR 03 code"/>
 </p>
 
-## Previous Version - Version 02 (Background Images & Improved Selectors)
+### Previous Version - Version 02 (Background Images & Improved Selectors)
 <p align="left">
   <img src="/assets/images/mobileQR02.png" width="120" alt="mobile QR 02 code"/>
 </p>
 
-## Version 01 (Basic UI)
+### Version 01 (Basic UI)
 <p align="left">
   <img src="/assets/images/mobileQR01.png" width="120" alt="mobile QR 01 code"/>
 </p>
@@ -55,15 +61,6 @@ then scan the QR code.
 - Returns matched location details: title, description, temperature, forecast, and livestream URL.  
 - Learn fun weather-related facts powered by Cohere while the app loads data. 
 - Fallbacks for unavailable streams or no matches found.
-
----
-
-## UI Screen Capture
-
-
-https://github.com/user-attachments/assets/327f1584-393e-4e22-bb35-af731ad24403
-
-
 
 ---
 
